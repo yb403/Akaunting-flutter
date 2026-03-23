@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'main.dart';
+import '../../../../core/network/api_client.dart';
+import '../../../dashboard/presentation/pages/main_screen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -30,37 +29,31 @@ class _LoginPageState extends State<LoginPage> {
     try {
       String email = _emailController.text.trim();
       String password = _passwordController.text.trim();
-      String basicAuth = 'Basic ${base64Encode(utf8.encode('$email:$password'))}';
 
-      var headers = {
-        'Authorization': basicAuth,
-        'Accept': 'application/json',
-      };
-      
-      var request = http.Request('GET', Uri.parse('http://192.168.1.116/akaunting/api/ping'));
-      request.headers.addAll(headers);
+      // Save credentials first so ApiClient can use them
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setString('email', email);
+      await prefs.setString('password', password);
 
-      http.StreamedResponse response = await request.send();
+      // Make the login ping using the new ApiClient
+      var response = await ApiClient.getRequest('/ping');
 
-      var responseBodyText = await response.stream.bytesToString();
       print('Login Ping Status: ${response.statusCode}');
-      print('Login Ping Body: $responseBodyText');
+      print('Login Ping Body: ${response.body}');
 
       if (response.statusCode == 200 || response.statusCode == 201) {
-        // Successful login
-        SharedPreferences prefs = await SharedPreferences.getInstance();
-        await prefs.setString('email', email);
-        await prefs.setString('password', password);
-
         if (!mounted) return;
         
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const MyHomePage(title: 'Flutter Demo Home Page'),
+            builder: (context) => const MainScreen(),
           ),
         );
       } else {
+        // Revert credentials if authentication fails
+        await prefs.remove('email');
+        await prefs.remove('password');
         setState(() {
           _errorMessage = 'Login failed. Status: ${response.statusCode} - ${response.reasonPhrase}';
         });
