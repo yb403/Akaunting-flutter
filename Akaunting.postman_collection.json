@@ -5752,15 +5752,15 @@
   "variable": [
     {
       "key": "akaunting_url",
-      "value": "https://your-domain.com/api"
+      "value": "http://192.168.1.116/akaunting/api"
     },
     {
       "key": "akaunting_email",
-      "value": "your-email-address@gmail.com"
+      "value": "admin@company.com"
     },
     {
       "key": "akaunting_password",
-      "value": "your-strong-password"
+      "value": "password"
     },
     {
       "key": "akaunting_page",
