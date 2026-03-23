@@ -1,0 +1,5830 @@
+{
+  "info": {
+    "_postman_id": "d11eea44-3ef3-494d-a644-75aaf8a3c4cd",
+    "name": "Core",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25139811"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "List users",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/users?page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}",
+                  "description": "1"
+                }
+              ]
+            },
+            "description": "GET Users"
+          },
+          "response": []
+        },
+        {
+          "name": "Search users",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/users?search=name:User02&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "name:User02"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}",
+                  "description": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create user",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/users?name=User02&email=user02@gmail.com&enabled=1",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "User02"
+                },
+                {
+                  "key": "email",
+                  "value": "user02@gmail.com"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update user",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/users/{{akaunting_user_id}}?name=User02&email=user02@gmail.com&enabled=1",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "users",
+                "{{akaunting_user_id}}"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "User02"
+                },
+                {
+                  "key": "email",
+                  "value": "user02@gmail.com"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enable user",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/users/{{akaunting_user_id}}/enable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "users",
+                "{{akaunting_user_id}}",
+                "enable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Disable user",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/users/{{akaunting_user_id}}/disable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "users",
+                "{{akaunting_user_id}}",
+                "disable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete user",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{akaunting_url}}/users/{{akaunting_user_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "users",
+                "{{akaunting_user_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Companies",
+      "item": [
+        {
+          "name": "List companies",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{akaunting_url}}/companies",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search companies",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{akaunting_url}}/companies?search=My Company",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "companies"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "My Company"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enable company",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{akaunting_url}}/companies/{{akaunting_company_id}}/enable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "companies",
+                "{{akaunting_company_id}}",
+                "enable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Disable company",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{akaunting_url}}/companies/{{akaunting_company_id}}/disable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "companies",
+                "{{akaunting_company_id}}",
+                "disable"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Items",
+      "item": [
+        {
+          "name": "List items",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/items?page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "items"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search items",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/items?search=Item0000&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "items"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "Item0000"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create item",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/items?name=Test item&description=This is a description&sale_price=23.3&purchase_price=21.1&category_id={{akaunting_category_id}}&tax_ids[0]={{akaunting_tax_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "items"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Test item"
+                },
+                {
+                  "key": "description",
+                  "value": "This is a description"
+                },
+                {
+                  "key": "sale_price",
+                  "value": "23.3"
+                },
+                {
+                  "key": "purchase_price",
+                  "value": "21.1"
+                },
+                {
+                  "key": "category_id",
+                  "value": "{{akaunting_category_id}}"
+                },
+                {
+                  "key": "tax_ids[0]",
+                  "value": "{{akaunting_tax_id}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get item",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/items/{{akaunting_item_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "items",
+                "{{akaunting_item_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update item",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/items/{{akaunting_item_id}}?name=Test item&description=This is a description&sale_price=233&purchase_price=211&category_id={{akaunting_category_id}}&tax_ids[0]={{akaunting_tax_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "items",
+                "{{akaunting_item_id}}"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Test item"
+                },
+                {
+                  "key": "description",
+                  "value": "This is a description"
+                },
+                {
+                  "key": "sale_price",
+                  "value": "233"
+                },
+                {
+                  "key": "purchase_price",
+                  "value": "211"
+                },
+                {
+                  "key": "category_id",
+                  "value": "{{akaunting_category_id}}"
+                },
+                {
+                  "key": "tax_ids[0]",
+                  "value": "{{akaunting_tax_id}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enable item",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/items/{{akaunting_item_id}}/enable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "items",
+                "{{akaunting_item_id}}",
+                "enable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Disable item",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/items/{{akaunting_item_id}}/disable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "items",
+                "{{akaunting_item_id}}",
+                "disable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete item",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/items/{{akaunting_item_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "items",
+                "{{akaunting_item_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Invoices",
+      "item": [
+        {
+          "name": "List invoices",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/documents?search=type:invoice&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:invoice"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search invoices",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/documents?search=type:invoice document_number:000037&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:invoice document_number:000037"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create invoice",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "attachment[0]",
+                  "value": "simple_file.pdf",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{akaunting_url}}/documents?category_id=3&document_number=0000004&status=paid&issued_at=2022-04-23&due_at=2022-05-22&account_id=1&currency_code=USD&currency_rate=1&notes=This is note for invoice&contact_id=2&contact_name=Name&contact_email=mail@mail.com&contact_address=Client address&items[0][item_id]=1&items[0][name]=Service&items[0][quantity]=2&items[0][price]=1&items[0][total]=2&items[0][discount]=0&items[0][description]=This is custom item description&items[0][tax_ids][0]=1&items[0][tax_ids][1]=1&amount=2&type=invoice&search=type:invoice",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents"
+              ],
+              "query": [
+                {
+                  "key": "category_id",
+                  "value": "3",
+                  "description": "Income category"
+                },
+                {
+                  "key": "document_number",
+                  "value": "0000004"
+                },
+                {
+                  "key": "status",
+                  "value": "paid"
+                },
+                {
+                  "key": "issued_at",
+                  "value": "2022-04-23"
+                },
+                {
+                  "key": "due_at",
+                  "value": "2022-05-22"
+                },
+                {
+                  "key": "account_id",
+                  "value": "1",
+                  "description": "Account id"
+                },
+                {
+                  "key": "currency_code",
+                  "value": "USD",
+                  "description": "Currency code"
+                },
+                {
+                  "key": "currency_rate",
+                  "value": "1"
+                },
+                {
+                  "key": "notes",
+                  "value": "This is note for invoice"
+                },
+                {
+                  "key": "contact_id",
+                  "value": "2",
+                  "description": "Selected Customer ID"
+                },
+                {
+                  "key": "contact_name",
+                  "value": "Name",
+                  "description": "Selected Customer Name"
+                },
+                {
+                  "key": "contact_email",
+                  "value": "mail@mail.com",
+                  "description": "Selected Customer Email"
+                },
+                {
+                  "key": "contact_address",
+                  "value": "Client address",
+                  "description": "Selected Customer Address"
+                },
+                {
+                  "key": "items[0][item_id]",
+                  "value": "1",
+                  "description": "Item ID"
+                },
+                {
+                  "key": "items[0][name]",
+                  "value": "Service",
+                  "description": "Item Name"
+                },
+                {
+                  "key": "items[0][quantity]",
+                  "value": "2"
+                },
+                {
+                  "key": "items[0][price]",
+                  "value": "1"
+                },
+                {
+                  "key": "items[0][total]",
+                  "value": "2"
+                },
+                {
+                  "key": "items[0][discount]",
+                  "value": "0"
+                },
+                {
+                  "key": "items[0][description]",
+                  "value": "This is custom item description"
+                },
+                {
+                  "key": "items[0][tax_ids][0]",
+                  "value": "1",
+                  "description": "Tax ID"
+                },
+                {
+                  "key": "items[0][tax_ids][1]",
+                  "value": "1",
+                  "description": "Tax ID"
+                },
+                {
+                  "key": "amount",
+                  "value": "2"
+                },
+                {
+                  "key": "type",
+                  "value": "invoice"
+                },
+                {
+                  "key": "search",
+                  "value": "type:invoice"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create invoice",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Company",
+                    "value": "{{akaunting_company_id}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "attachment[0]",
+                      "value": "simple_file.pdf",
+                      "type": "text",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{akaunting_url}}/documents?category_id=3&document_number=0000003&status=draft&issued_at=2022-04-23&due_at=2022-05-22&account_id=1&currency_code=USD&currency_rate=1&notes=This is note for invoice&contact_id=2&contact_name=Name&contact_email=mail@mail.com&contact_address=Client address&items[0][item_id]=1&items[0][name]=Service&items[0][quantity]=2&items[0][price]=1&items[0][total]=2&items[0][discount]=0&items[0][description]=This is custom item description&items[0][tax_ids][0]=1&items[0][tax_ids][1]=1&amount=2&type=invoice&search=type:invoice",
+                  "host": [
+                    "{{akaunting_url}}"
+                  ],
+                  "path": [
+                    "documents"
+                  ],
+                  "query": [
+                    {
+                      "key": "category_id",
+                      "value": "3",
+                      "description": "Income category"
+                    },
+                    {
+                      "key": "document_number",
+                      "value": "0000003"
+                    },
+                    {
+                      "key": "status",
+                      "value": "draft"
+                    },
+                    {
+                      "key": "issued_at",
+                      "value": "2022-04-23"
+                    },
+                    {
+                      "key": "due_at",
+                      "value": "2022-05-22"
+                    },
+                    {
+                      "key": "account_id",
+                      "value": "1",
+                      "description": "Account id"
+                    },
+                    {
+                      "key": "currency_code",
+                      "value": "USD",
+                      "description": "Currency code"
+                    },
+                    {
+                      "key": "currency_rate",
+                      "value": "1"
+                    },
+                    {
+                      "key": "notes",
+                      "value": "This is note for invoice"
+                    },
+                    {
+                      "key": "contact_id",
+                      "value": "2",
+                      "description": "Selected Customer ID"
+                    },
+                    {
+                      "key": "contact_name",
+                      "value": "Name",
+                      "description": "Selected Customer Name"
+                    },
+                    {
+                      "key": "contact_email",
+                      "value": "mail@mail.com",
+                      "description": "Selected Customer Email"
+                    },
+                    {
+                      "key": "contact_address",
+                      "value": "Client address",
+                      "description": "Selected Customer Address"
+                    },
+                    {
+                      "key": "items[0][item_id]",
+                      "value": "1",
+                      "description": "Item ID"
+                    },
+                    {
+                      "key": "items[0][name]",
+                      "value": "Service",
+                      "description": "Item Name"
+                    },
+                    {
+                      "key": "items[0][quantity]",
+                      "value": "2"
+                    },
+                    {
+                      "key": "items[0][price]",
+                      "value": "1"
+                    },
+                    {
+                      "key": "items[0][total]",
+                      "value": "2"
+                    },
+                    {
+                      "key": "items[0][discount]",
+                      "value": "0"
+                    },
+                    {
+                      "key": "items[0][description]",
+                      "value": "This is custom item description"
+                    },
+                    {
+                      "key": "items[0][tax_ids][0]",
+                      "value": "1",
+                      "description": "Tax ID"
+                    },
+                    {
+                      "key": "items[0][tax_ids][1]",
+                      "value": "1",
+                      "description": "Tax ID"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "2"
+                    },
+                    {
+                      "key": "type",
+                      "value": "invoice"
+                    },
+                    {
+                      "key": "search",
+                      "value": "type:invoice"
+                    }
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Date",
+                  "value": "Mon, 09 Mar 2026 00:04:53 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.2.12"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Location",
+                  "value": "http://idaax.local/akaunting/api/documents/2"
+                },
+                {
+                  "key": "X-RateLimit-Limit",
+                  "value": "60"
+                },
+                {
+                  "key": "X-RateLimit-Remaining",
+                  "value": "57"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5, max=100"
+                },
+                {
+                  "key": "Connection",
+                  "value": "Keep-Alive"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"data\": {\n        \"id\": 2,\n        \"company_id\": 1,\n        \"type\": \"invoice\",\n        \"document_number\": \"0000003\",\n        \"order_number\": null,\n        \"status\": \"draft\",\n        \"issued_at\": \"2022-04-23T00:04:53+01:00\",\n        \"due_at\": \"2022-05-22T00:04:53+01:00\",\n        \"amount\": 4,\n        \"amount_formatted\": \"$4.00\",\n        \"category_id\": \"3\",\n        \"currency_code\": \"USD\",\n        \"currency_rate\": 1,\n        \"contact_id\": \"2\",\n        \"contact_name\": \"Name\",\n        \"contact_email\": \"mail@mail.com\",\n        \"contact_tax_number\": null,\n        \"contact_phone\": null,\n        \"contact_address\": \"Client address\",\n        \"contact_city\": null,\n        \"contact_zip_code\": null,\n        \"contact_state\": null,\n        \"contact_country\": null,\n        \"notes\": \"This is note for invoice\",\n        \"attachment\": false,\n        \"created_from\": \"core::api\",\n        \"created_by\": 1,\n        \"created_at\": \"2026-03-09T00:04:53+00:00\",\n        \"updated_at\": \"2026-03-09T00:04:53+00:00\",\n        \"category\": {\n            \"id\": 3,\n            \"company_id\": 1,\n            \"name\": \"Sales\",\n            \"type\": \"income\",\n            \"color\": \"#6da252\",\n            \"enabled\": true,\n            \"parent_id\": null,\n            \"created_from\": \"core::seed\",\n            \"created_by\": null,\n            \"created_at\": \"2026-03-08T22:05:38+00:00\",\n            \"updated_at\": \"2026-03-08T22:05:38+00:00\"\n        },\n        \"currency\": {\n            \"id\": 1,\n            \"company_id\": 1,\n            \"name\": \"US Dollar\",\n            \"code\": \"USD\",\n            \"rate\": 1,\n            \"enabled\": true,\n            \"precision\": 2,\n            \"symbol\": \"$\",\n            \"symbol_first\": 1,\n            \"decimal_mark\": \".\",\n            \"thousands_separator\": \",\",\n            \"created_from\": \"core::seed\",\n            \"created_by\": null,\n            \"created_at\": \"2026-03-08T22:05:38+00:00\",\n            \"updated_at\": \"2026-03-08T22:05:38+00:00\"\n        },\n        \"contact\": {\n            \"id\": null,\n            \"company_id\": null,\n            \"user_id\": null,\n            \"type\": null,\n            \"name\": \"N/A\",\n            \"email\": null,\n            \"tax_number\": null,\n            \"phone\": null,\n            \"address\": null,\n            \"website\": null,\n            \"currency_code\": null,\n            \"enabled\": null,\n            \"reference\": null,\n            \"created_from\": null,\n            \"created_by\": null,\n            \"created_at\": \"\",\n            \"updated_at\": \"\",\n            \"contact_persons\": {\n                \"data\": []\n            }\n        },\n        \"histories\": {\n            \"data\": [\n                {\n                    \"id\": 2,\n                    \"company_id\": 1,\n                    \"type\": \"invoice\",\n                    \"document_id\": 2,\n                    \"status\": \"draft\",\n                    \"notify\": 0,\n                    \"description\": \"0000003 added!\",\n                    \"created_from\": \"core::api\",\n                    \"created_by\": 1,\n                    \"created_at\": \"2026-03-09T00:04:53+00:00\",\n                    \"updated_at\": \"2026-03-09T00:04:53+00:00\"\n                }\n            ]\n        },\n        \"items\": {\n            \"data\": [\n                {\n                    \"id\": 2,\n                    \"company_id\": 1,\n                    \"type\": \"invoice\",\n                    \"document_id\": 2,\n                    \"item_id\": 1,\n                    \"name\": \"Service\",\n                    \"description\": \"This is custom item description\",\n                    \"price\": 1,\n                    \"price_formatted\": \"$1.00\",\n                    \"total\": 2,\n                    \"total_formatted\": \"$2.00\",\n                    \"created_from\": \"core::api\",\n                    \"created_by\": 1,\n                    \"created_at\": \"2026-03-09T00:04:53+00:00\",\n                    \"updated_at\": \"2026-03-09T00:04:53+00:00\",\n                    \"taxes\": {\n                        \"data\": []\n                    }\n                }\n            ]\n        },\n        \"item_taxes\": {\n            \"data\": []\n        },\n        \"totals\": {\n            \"data\": [\n                {\n                    \"id\": 3,\n                    \"company_id\": 1,\n                    \"type\": \"invoice\",\n                    \"document_id\": 2,\n                    \"code\": \"sub_total\",\n                    \"name\": \"invoices.sub_total\",\n                    \"amount\": 2,\n                    \"amount_formatted\": \"$2.00\",\n                    \"sort_order\": 1,\n                    \"created_from\": \"core::api\",\n                    \"created_by\": 1,\n                    \"created_at\": \"2026-03-09T00:04:53+00:00\",\n                    \"updated_at\": \"2026-03-09T00:04:53+00:00\"\n                },\n                {\n                    \"id\": 4,\n                    \"company_id\": 1,\n                    \"type\": \"invoice\",\n                    \"document_id\": 2,\n                    \"code\": \"total\",\n                    \"name\": \"invoices.total\",\n                    \"amount\": 4,\n                    \"amount_formatted\": \"$4.00\",\n                    \"sort_order\": 2,\n                    \"created_from\": \"core::api\",\n                    \"created_by\": 1,\n                    \"created_at\": \"2026-03-09T00:04:53+00:00\",\n                    \"updated_at\": \"2026-03-09T00:04:53+00:00\"\n                }\n            ]\n        },\n        \"transactions\": {\n            \"data\": []\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get invoice",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/documents/{{akaunting_document_id}}?search=type:invoice",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents",
+                "{{akaunting_document_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:invoice"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update invoice",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "attachment[0]",
+                  "value": "simple.pdf",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{akaunting_url}}/documents/1?type=invoice&category_id=1&document_number=INV-00001&search=type:invoice&status=draft&issued_at=2021-10-21&due_at=2021-10-29&account_id=1&currency_code=EUR&currency_rate=1&notes=This is note for invoice&contact_id=1&contact_name=Name&contact_email=mail@mail.com&contact_address=Client address&items[0][item_id]=1&items[0][name]=Service&items[0][quantity]=2&items[0][price]=12&items[0][total]=24&items[0][discount]=0&items[0][description]=This is custom item description&items[0][tax_ids][0]=1&items[0][tax_ids][1]=2",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "invoice"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "description": "Income category"
+                },
+                {
+                  "key": "document_number",
+                  "value": "INV-00001"
+                },
+                {
+                  "key": "search",
+                  "value": "type:invoice"
+                },
+                {
+                  "key": "status",
+                  "value": "draft"
+                },
+                {
+                  "key": "issued_at",
+                  "value": "2021-10-21"
+                },
+                {
+                  "key": "due_at",
+                  "value": "2021-10-29"
+                },
+                {
+                  "key": "account_id",
+                  "value": "1",
+                  "description": "Account id"
+                },
+                {
+                  "key": "currency_code",
+                  "value": "EUR",
+                  "description": "Currency code"
+                },
+                {
+                  "key": "currency_rate",
+                  "value": "1"
+                },
+                {
+                  "key": "notes",
+                  "value": "This is note for invoice"
+                },
+                {
+                  "key": "contact_id",
+                  "value": "1",
+                  "description": "Selected Customer ID"
+                },
+                {
+                  "key": "contact_name",
+                  "value": "Name",
+                  "description": "Selected Customer Name"
+                },
+                {
+                  "key": "contact_email",
+                  "value": "mail@mail.com",
+                  "description": "Selected Customer Email"
+                },
+                {
+                  "key": "contact_address",
+                  "value": "Client address",
+                  "description": "Selected Customer Address"
+                },
+                {
+                  "key": "items[0][item_id]",
+                  "value": "1",
+                  "description": "Item ID"
+                },
+                {
+                  "key": "items[0][name]",
+                  "value": "Service",
+                  "description": "Item Name"
+                },
+                {
+                  "key": "items[0][quantity]",
+                  "value": "2"
+                },
+                {
+                  "key": "items[0][price]",
+                  "value": "12"
+                },
+                {
+                  "key": "items[0][total]",
+                  "value": "24"
+                },
+                {
+                  "key": "items[0][discount]",
+                  "value": "0"
+                },
+                {
+                  "key": "items[0][description]",
+                  "value": "This is custom item description"
+                },
+                {
+                  "key": "items[0][tax_ids][0]",
+                  "value": "1",
+                  "description": "Tax ID"
+                },
+                {
+                  "key": "items[0][tax_ids][1]",
+                  "value": "2",
+                  "description": "Tax ID"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add invoice payment",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "company_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "amount",
+                  "value": "10",
+                  "type": "text"
+                },
+                {
+                  "key": "number",
+                  "value": "TRA-00001",
+                  "type": "text"
+                },
+                {
+                  "key": "reference",
+                  "value": "",
+                  "type": "text"
+                },
+                {
+                  "key": "document_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "category_id",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "currency_code",
+                  "value": "USD",
+                  "type": "text"
+                },
+                {
+                  "key": "currency_rate",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "type",
+                  "value": "income",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "",
+                  "type": "text"
+                },
+                {
+                  "key": "payment_method",
+                  "value": "offline-payments.cash.1",
+                  "type": "text"
+                },
+                {
+                  "key": "account_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "paid_at",
+                  "value": "2022-08-18 23:36:52",
+                  "type": "text"
+                },
+                {
+                  "key": "currency",
+                  "value": "Us Dollar",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{akaunting_url}}/documents/{{akaunting_document_id}}/transactions",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents",
+                "{{akaunting_document_id}}",
+                "transactions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete invoice",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/documents/{{akaunting_document_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents",
+                "{{akaunting_document_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Customers",
+      "item": [
+        {
+          "name": "List customers",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/contacts?search=type:customer&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "contacts"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:customer"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}",
+                  "description": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search customers",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/contacts?search=type:customer name:'Company Name'&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "contacts"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:customer name:'Company Name'"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}",
+                  "description": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create customer",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/contacts?search=type:customer&name=Customer02&email=email@gamix.co.nz&tax_number=5235667&currency_code=NZD&phone=567890&website=&address=20 Here Street&enabled=1&reference=84890&type=customer&city=Auckland&post_code=2016&country=New Zealand",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "contacts"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:customer"
+                },
+                {
+                  "key": "name",
+                  "value": "Customer02"
+                },
+                {
+                  "key": "email",
+                  "value": "email@gamix.co.nz"
+                },
+                {
+                  "key": "tax_number",
+                  "value": "5235667"
+                },
+                {
+                  "key": "currency_code",
+                  "value": "NZD"
+                },
+                {
+                  "key": "phone",
+                  "value": "567890"
+                },
+                {
+                  "key": "website",
+                  "value": ""
+                },
+                {
+                  "key": "address",
+                  "value": "20 Here Street"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                },
+                {
+                  "key": "reference",
+                  "value": "84890"
+                },
+                {
+                  "key": "type",
+                  "value": "customer"
+                },
+                {
+                  "key": "city",
+                  "value": "Auckland"
+                },
+                {
+                  "key": "post_code",
+                  "value": "2016"
+                },
+                {
+                  "key": "country",
+                  "value": "New Zealand"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get customer",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/contacts/{{akaunting_contact_id}}?search=type:customer",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "contacts",
+                "{{akaunting_contact_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:customer"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update customer",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/contacts/{{akaunting_contact_id}}?search=type:customer&name=Customer&email=customer@mail.com&tax_number=111111&currency_code=USD&phone=67890&website=google.com&address=Address&enabled=1&reference=67890",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "contacts",
+                "{{akaunting_contact_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:customer"
+                },
+                {
+                  "key": "name",
+                  "value": "Customer"
+                },
+                {
+                  "key": "email",
+                  "value": "customer@mail.com"
+                },
+                {
+                  "key": "tax_number",
+                  "value": "111111"
+                },
+                {
+                  "key": "currency_code",
+                  "value": "USD"
+                },
+                {
+                  "key": "phone",
+                  "value": "67890"
+                },
+                {
+                  "key": "website",
+                  "value": "google.com"
+                },
+                {
+                  "key": "address",
+                  "value": "Address"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                },
+                {
+                  "key": "reference",
+                  "value": "67890"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete customer",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/contacts/{{akaunting_contact_id}}?search=type:customer",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "contacts",
+                "{{akaunting_contact_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:customer"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Bills",
+      "item": [
+        {
+          "name": "List bills",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/documents?search=type:bill&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:bill"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search bills",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/documents?search=type:bill order_number:123&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:bill order_number:123"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create bill",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "attachment[0]",
+                  "value": "file.png",
+                  "type": "text"
+                },
+                {
+                  "key": "amount",
+                  "value": "10",
+                  "type": "text",
+                  "uuid": "6c1eea22-5960-4c4d-90b8-c73e1820ba7e"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{akaunting_url}}/documents?type=bill&category_id=1&document_number=BILL-00001&search=type:bill&status=draft&issued_at=2021-10-21&due_at=2021-10-29&account_id=1&currency_code=USD&currency_rate=1&notes=This is note for invoice&contact_id=1&contact_name=Name&contact_email=mail@mail.com&contact_address=Client address&items[0][item_id]=1&items[0][name]=Service&items[0][quantity]=2&items[0][price]=12&items[0][total]=24&items[0][discount]=0&items[0][description]=This is custom item description&items[0][tax_ids][0]=1&items[0][tax_ids][1]=2",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "bill"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "description": "Income category"
+                },
+                {
+                  "key": "document_number",
+                  "value": "BILL-00001"
+                },
+                {
+                  "key": "search",
+                  "value": "type:bill"
+                },
+                {
+                  "key": "status",
+                  "value": "draft"
+                },
+                {
+                  "key": "issued_at",
+                  "value": "2021-10-21"
+                },
+                {
+                  "key": "due_at",
+                  "value": "2021-10-29"
+                },
+                {
+                  "key": "account_id",
+                  "value": "1",
+                  "description": "Account id"
+                },
+                {
+                  "key": "currency_code",
+                  "value": "USD",
+                  "description": "Currency code"
+                },
+                {
+                  "key": "currency_rate",
+                  "value": "1"
+                },
+                {
+                  "key": "notes",
+                  "value": "This is note for invoice"
+                },
+                {
+                  "key": "contact_id",
+                  "value": "1",
+                  "description": "Selected Customer ID"
+                },
+                {
+                  "key": "contact_name",
+                  "value": "Name",
+                  "description": "Selected Customer Name"
+                },
+                {
+                  "key": "contact_email",
+                  "value": "mail@mail.com",
+                  "description": "Selected Customer Email"
+                },
+                {
+                  "key": "contact_address",
+                  "value": "Client address",
+                  "description": "Selected Customer Address"
+                },
+                {
+                  "key": "items[0][item_id]",
+                  "value": "1",
+                  "description": "Item ID"
+                },
+                {
+                  "key": "items[0][name]",
+                  "value": "Service",
+                  "description": "Item Name"
+                },
+                {
+                  "key": "items[0][quantity]",
+                  "value": "2"
+                },
+                {
+                  "key": "items[0][price]",
+                  "value": "12"
+                },
+                {
+                  "key": "items[0][total]",
+                  "value": "24"
+                },
+                {
+                  "key": "items[0][discount]",
+                  "value": "0"
+                },
+                {
+                  "key": "items[0][description]",
+                  "value": "This is custom item description"
+                },
+                {
+                  "key": "items[0][tax_ids][0]",
+                  "value": "1",
+                  "description": "Tax ID"
+                },
+                {
+                  "key": "items[0][tax_ids][1]",
+                  "value": "2",
+                  "description": "Tax ID"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get bill",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/documents/{{akaunting_document_id}}?search=type:bill",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents",
+                "{{akaunting_document_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:bill"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update bill",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "attachment[0]",
+                  "value": "file.png",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{akaunting_url}}/documents/1?type=bill&category_id=1&document_number=BILL-00001&search=type:bill&status=draft&issued_at=2021-10-21&due_at=2021-10-29&account_id=1&currency_code=EUR&currency_rate=1&notes=This is note for invoice&contact_id=1&contact_name=Name&contact_email=mail@mail.com&contact_address=Client address&items[0][item_id]=1&items[0][name]=Service&items[0][quantity]=2&items[0][price]=12&items[0][total]=24&items[0][discount]=0&items[0][description]=This is custom item description&items[0][tax_ids][0]=1&items[0][tax_ids][1]=2",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "bill"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "description": "Income category"
+                },
+                {
+                  "key": "document_number",
+                  "value": "BILL-00001"
+                },
+                {
+                  "key": "search",
+                  "value": "type:bill"
+                },
+                {
+                  "key": "status",
+                  "value": "draft"
+                },
+                {
+                  "key": "issued_at",
+                  "value": "2021-10-21"
+                },
+                {
+                  "key": "due_at",
+                  "value": "2021-10-29"
+                },
+                {
+                  "key": "account_id",
+                  "value": "1",
+                  "description": "Account id"
+                },
+                {
+                  "key": "currency_code",
+                  "value": "EUR",
+                  "description": "Currency code"
+                },
+                {
+                  "key": "currency_rate",
+                  "value": "1"
+                },
+                {
+                  "key": "notes",
+                  "value": "This is note for invoice"
+                },
+                {
+                  "key": "contact_id",
+                  "value": "1",
+                  "description": "Selected Customer ID"
+                },
+                {
+                  "key": "contact_name",
+                  "value": "Name",
+                  "description": "Selected Customer Name"
+                },
+                {
+                  "key": "contact_email",
+                  "value": "mail@mail.com",
+                  "description": "Selected Customer Email"
+                },
+                {
+                  "key": "contact_address",
+                  "value": "Client address",
+                  "description": "Selected Customer Address"
+                },
+                {
+                  "key": "items[0][item_id]",
+                  "value": "1",
+                  "description": "Item ID"
+                },
+                {
+                  "key": "items[0][name]",
+                  "value": "Service",
+                  "description": "Item Name"
+                },
+                {
+                  "key": "items[0][quantity]",
+                  "value": "2"
+                },
+                {
+                  "key": "items[0][price]",
+                  "value": "12"
+                },
+                {
+                  "key": "items[0][total]",
+                  "value": "24"
+                },
+                {
+                  "key": "items[0][discount]",
+                  "value": "0"
+                },
+                {
+                  "key": "items[0][description]",
+                  "value": "This is custom item description"
+                },
+                {
+                  "key": "items[0][tax_ids][0]",
+                  "value": "1",
+                  "description": "Tax ID"
+                },
+                {
+                  "key": "items[0][tax_ids][1]",
+                  "value": "2",
+                  "description": "Tax ID"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete bill",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/documents/{{akaunting_document_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "documents",
+                "{{akaunting_document_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vendors",
+      "item": [
+        {
+          "name": "List vendors",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/contacts?search=type:customer&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "contacts"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:customer"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search vendors",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/contacts?search=type:customer name:Customer01&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "contacts"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:customer name:Customer01"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create vendor",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/contacts?search=type:vendor&name=Vendor&email=vendor@mail.com&tax_number=67890&currency_code=USD&phone=567890&website=google.com&address=Address&enabled=1&reference=567890",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "contacts"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:vendor"
+                },
+                {
+                  "key": "name",
+                  "value": "Vendor"
+                },
+                {
+                  "key": "email",
+                  "value": "vendor@mail.com"
+                },
+                {
+                  "key": "tax_number",
+                  "value": "67890"
+                },
+                {
+                  "key": "currency_code",
+                  "value": "USD"
+                },
+                {
+                  "key": "phone",
+                  "value": "567890"
+                },
+                {
+                  "key": "website",
+                  "value": "google.com"
+                },
+                {
+                  "key": "address",
+                  "value": "Address"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                },
+                {
+                  "key": "reference",
+                  "value": "567890"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get vendor",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/contacts/{{akaunting_contact_id}}?search=type:vendor",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "contacts",
+                "{{akaunting_contact_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:vendor"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update vendor",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/contacts/{{akaunting_contact_id}}?search=type:vendor&name=Vendor&email=vendor@mail.com&tax_number=111111&currency_code=USD&phone=67890&website=google.com&address=Address&enabled=1&reference=67890",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "contacts",
+                "{{akaunting_contact_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:vendor"
+                },
+                {
+                  "key": "name",
+                  "value": "Vendor"
+                },
+                {
+                  "key": "email",
+                  "value": "vendor@mail.com"
+                },
+                {
+                  "key": "tax_number",
+                  "value": "111111"
+                },
+                {
+                  "key": "currency_code",
+                  "value": "USD"
+                },
+                {
+                  "key": "phone",
+                  "value": "67890"
+                },
+                {
+                  "key": "website",
+                  "value": "google.com"
+                },
+                {
+                  "key": "address",
+                  "value": "Address"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                },
+                {
+                  "key": "reference",
+                  "value": "67890"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete vendor",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/contacts/{{akaunting_contact_id}}?search=type:vendor",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "contacts",
+                "{{akaunting_contact_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:vendor"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Accounts",
+      "item": [
+        {
+          "name": "List accounts",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/accounts?page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "accounts"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search accounts",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/accounts?page={{akaunting_page}}&limit={{akaunting_limit}}&search=Cash",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "accounts"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                },
+                {
+                  "key": "search",
+                  "value": "Cash"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create account",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/accounts?number=1&currency_code=USD&opening_balance=0&bank_name=My Bank&bank_phone=&bank_address=Bank Address&enabled=1",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "accounts"
+              ],
+              "query": [
+                {
+                  "key": "number",
+                  "value": "1"
+                },
+                {
+                  "key": "currency_code",
+                  "value": "USD"
+                },
+                {
+                  "key": "opening_balance",
+                  "value": "0"
+                },
+                {
+                  "key": "bank_name",
+                  "value": "My Bank"
+                },
+                {
+                  "key": "bank_phone",
+                  "value": ""
+                },
+                {
+                  "key": "bank_address",
+                  "value": "Bank Address"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get account",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/accounts/{{akaunting_account_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "accounts",
+                "{{akaunting_account_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update account",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/accounts/{{akaunting_account_id}}?number=1&currency_code=USD&opening_balance=0&bank_name=My Bank&bank_phone=&bank_address=Bank Address&enabled=1",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "accounts",
+                "{{akaunting_account_id}}"
+              ],
+              "query": [
+                {
+                  "key": "number",
+                  "value": "1"
+                },
+                {
+                  "key": "currency_code",
+                  "value": "USD"
+                },
+                {
+                  "key": "opening_balance",
+                  "value": "0"
+                },
+                {
+                  "key": "bank_name",
+                  "value": "My Bank"
+                },
+                {
+                  "key": "bank_phone",
+                  "value": ""
+                },
+                {
+                  "key": "bank_address",
+                  "value": "Bank Address"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enable account",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/accounts/{{akaunting_account_id}}/enable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "accounts",
+                "{{akaunting_account_id}}",
+                "enable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Disable account",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/accounts/{{akaunting_account_id}}/disable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "accounts",
+                "{{akaunting_account_id}}",
+                "disable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete account",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/accounts/{{akaunting_account_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "accounts",
+                "{{akaunting_account_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Income Transactions",
+      "item": [
+        {
+          "name": "List income transactions",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transactions?search=type:income&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transactions"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:income"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search income transactions",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transactions?search=type:income amount:4.60&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transactions"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:income amount:4.60"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create income transaction",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transactions?search=type:income&account_id={{akaunting_account_id}}&category_id=1&contact_id=1&paid_at=2021-04-15&reference=456tfd4&payment_method=cash&type=income",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transactions"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:income"
+                },
+                {
+                  "key": "account_id",
+                  "value": "{{akaunting_account_id}}"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1"
+                },
+                {
+                  "key": "contact_id",
+                  "value": "1"
+                },
+                {
+                  "key": "paid_at",
+                  "value": "2021-04-15"
+                },
+                {
+                  "key": "reference",
+                  "value": "456tfd4"
+                },
+                {
+                  "key": "payment_method",
+                  "value": "cash"
+                },
+                {
+                  "key": "type",
+                  "value": "income"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get income transaction",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transactions/{{akaunting_transaction_id}}?search=type:income",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transactions",
+                "{{akaunting_transaction_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:income"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update income transaction",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transactions/{{akaunting_transaction_id}}?search=type:income&account_id={{akaunting_account_id}}&category_id=1&contact_id=1&paid_at=2021-04-15&reference=456tfd4&payment_method=cash&type=income",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transactions",
+                "{{akaunting_transaction_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:income"
+                },
+                {
+                  "key": "account_id",
+                  "value": "{{akaunting_account_id}}"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1"
+                },
+                {
+                  "key": "contact_id",
+                  "value": "1"
+                },
+                {
+                  "key": "paid_at",
+                  "value": "2021-04-15"
+                },
+                {
+                  "key": "reference",
+                  "value": "456tfd4"
+                },
+                {
+                  "key": "payment_method",
+                  "value": "cash"
+                },
+                {
+                  "key": "type",
+                  "value": "income"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete income transaction",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transactions/{{akaunting_transaction_id}}?search=type:income",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transactions",
+                "{{akaunting_transaction_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:income"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Expense Transactions",
+      "item": [
+        {
+          "name": "List expense transactions",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transactions?search=type:expense&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transactions"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:expense"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search expense transactions",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transactions?search=type:expense reference:1235&page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transactions"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:expense reference:1235"
+                },
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create expense transaction",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transactions?search=type:expense&account_id={{akaunting_account_id}}&category_id=1&contact_id=1&paid_at=2021-04-15&reference=456tfd4&payment_method=cash&type=expense",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transactions"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:expense"
+                },
+                {
+                  "key": "account_id",
+                  "value": "{{akaunting_account_id}}"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1"
+                },
+                {
+                  "key": "contact_id",
+                  "value": "1"
+                },
+                {
+                  "key": "paid_at",
+                  "value": "2021-04-15"
+                },
+                {
+                  "key": "reference",
+                  "value": "456tfd4"
+                },
+                {
+                  "key": "payment_method",
+                  "value": "cash"
+                },
+                {
+                  "key": "type",
+                  "value": "expense"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get expense transaction",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transactions/{{akaunting_transaction_id}}?search=type:expense",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transactions",
+                "{{akaunting_transaction_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:expense"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update expense transaction",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transactions/{{akaunting_transaction_id}}?search=type:expense&account_id={{akaunting_account_id}}&category_id=1&contact_id=1&paid_at=2021-04-15&reference=456tfd4&payment_method=cash&type=expense",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transactions",
+                "{{akaunting_transaction_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:expense"
+                },
+                {
+                  "key": "account_id",
+                  "value": "{{akaunting_account_id}}"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1"
+                },
+                {
+                  "key": "contact_id",
+                  "value": "1"
+                },
+                {
+                  "key": "paid_at",
+                  "value": "2021-04-15"
+                },
+                {
+                  "key": "reference",
+                  "value": "456tfd4"
+                },
+                {
+                  "key": "payment_method",
+                  "value": "cash"
+                },
+                {
+                  "key": "type",
+                  "value": "expense"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete expense transaction",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transactions/{{akaunting_transaction_id}}?search=type:expense",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transactions",
+                "{{akaunting_transaction_id}}"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "type:expense"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Transfers",
+      "item": [
+        {
+          "name": "List tansfers",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transfers?page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create transfer",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transfers?from_currency_code=USD&from_account_rate=1&to_currency_code=USD&to_account_rate=1&reference=&currency_code=USD&currency_rate=1&from_account_id={{akaunting_transfer_from_account_id}}&to_account_id={{akaunting_transfer_to_account_id}}&amount=100.00&payment_method=offline-payments.cash.1",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transfers"
+              ],
+              "query": [
+                {
+                  "key": "from_currency_code",
+                  "value": "USD"
+                },
+                {
+                  "key": "from_account_rate",
+                  "value": "1"
+                },
+                {
+                  "key": "to_currency_code",
+                  "value": "USD"
+                },
+                {
+                  "key": "to_account_rate",
+                  "value": "1"
+                },
+                {
+                  "key": "reference",
+                  "value": ""
+                },
+                {
+                  "key": "currency_code",
+                  "value": "USD"
+                },
+                {
+                  "key": "currency_rate",
+                  "value": "1"
+                },
+                {
+                  "key": "from_account_id",
+                  "value": "{{akaunting_transfer_from_account_id}}"
+                },
+                {
+                  "key": "to_account_id",
+                  "value": "{{akaunting_transfer_to_account_id}}"
+                },
+                {
+                  "key": "amount",
+                  "value": "100.00"
+                },
+                {
+                  "key": "payment_method",
+                  "value": "offline-payments.cash.1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get transfer",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transfers/{{akaunting_transfer_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transfers",
+                "{{akaunting_transfer_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update transfer",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transfers/{{akaunting_transfer_id}}?from_currency_code=USD&from_account_rate=1&to_currency_code=USD&to_account_rate=1&reference=&currency_code=USD&currency_rate=1&from_account_id={{akaunting_transfer_from_account_id}}&to_account_id={{akaunting_transfer_to_account_id}}&amount=100.00&payment_method=offline-payments.cash.1",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transfers",
+                "{{akaunting_transfer_id}}"
+              ],
+              "query": [
+                {
+                  "key": "from_currency_code",
+                  "value": "USD"
+                },
+                {
+                  "key": "from_account_rate",
+                  "value": "1"
+                },
+                {
+                  "key": "to_currency_code",
+                  "value": "USD"
+                },
+                {
+                  "key": "to_account_rate",
+                  "value": "1"
+                },
+                {
+                  "key": "reference",
+                  "value": ""
+                },
+                {
+                  "key": "currency_code",
+                  "value": "USD"
+                },
+                {
+                  "key": "currency_rate",
+                  "value": "1"
+                },
+                {
+                  "key": "from_account_id",
+                  "value": "{{akaunting_transfer_from_account_id}}"
+                },
+                {
+                  "key": "to_account_id",
+                  "value": "{{akaunting_transfer_to_account_id}}"
+                },
+                {
+                  "key": "amount",
+                  "value": "100.00"
+                },
+                {
+                  "key": "payment_method",
+                  "value": "offline-payments.cash.1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete transfer",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/transfers/{{akaunting_transfer_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "transfers",
+                "{{akaunting_transfer_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reconciliations",
+      "item": [
+        {
+          "name": "List reconciliations",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/reconciliations?page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "reconciliations"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "List reports",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/reports",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "reports"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get report",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/reports/{{akaunting_report_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "reports",
+                "{{akaunting_report_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete report",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/reports/{{akaunting_report_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "reports",
+                "{{akaunting_report_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "List categories",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/categories?page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "categories"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search categories",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/categories?page={{akaunting_page}}&limit={{akaunting_limit}}&search=General",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "categories"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                },
+                {
+                  "key": "search",
+                  "value": "General"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create category",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/categories?type=income&name=Tax 1&color=%23000000&enabled=1",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "categories"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "income"
+                },
+                {
+                  "key": "name",
+                  "value": "Tax 1"
+                },
+                {
+                  "key": "color",
+                  "value": "%23000000"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get category",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/categories/{{akaunting_category_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "categories",
+                "{{akaunting_category_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update category",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/categories/{{akaunting_category_id}}?type=income&name=Tax 1&color=%23000000&enabled=1",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "categories",
+                "{{akaunting_category_id}}"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "income"
+                },
+                {
+                  "key": "name",
+                  "value": "Tax 1"
+                },
+                {
+                  "key": "color",
+                  "value": "%23000000"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enable category",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/categories/{{akaunting_category_id}}/enable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "categories",
+                "{{akaunting_category_id}}",
+                "enable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Disable category",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/categories/{{akaunting_category_id}}/enable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "categories",
+                "{{akaunting_category_id}}",
+                "enable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete category",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/categories/{{akaunting_category_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "categories",
+                "{{akaunting_category_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Currencies",
+      "item": [
+        {
+          "name": "List currencies",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/currencies?page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "currencies"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search currencies",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/currencies?page={{akaunting_page}}&limit={{akaunting_limit}}&search=Try",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "currencies"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                },
+                {
+                  "key": "search",
+                  "value": "Try"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create currency",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/currency?thousands_separator=.&name=Dolar&rate=1.2&enabled=1&code=USD&symbol=$&symbol_first=0&precision=2&decimal_mark=.",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "currency"
+              ],
+              "query": [
+                {
+                  "key": "thousands_separator",
+                  "value": "."
+                },
+                {
+                  "key": "name",
+                  "value": "Dolar"
+                },
+                {
+                  "key": "rate",
+                  "value": "1.2"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                },
+                {
+                  "key": "code",
+                  "value": "USD"
+                },
+                {
+                  "key": "symbol",
+                  "value": "$"
+                },
+                {
+                  "key": "symbol_first",
+                  "value": "0"
+                },
+                {
+                  "key": "precision",
+                  "value": "2"
+                },
+                {
+                  "key": "decimal_mark",
+                  "value": "."
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get currency",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/currency/{{akaunting_currency_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "currency",
+                "{{akaunting_currency_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update currency",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/currency/{{akaunting_currency_id}}?thousands_separator=.&name=Dolar&rate=1.2&enabled=1&code=USD&symbol=$&symbol_first=0&precision=2&decimal_mark=.",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "currency",
+                "{{akaunting_currency_id}}"
+              ],
+              "query": [
+                {
+                  "key": "thousands_separator",
+                  "value": "."
+                },
+                {
+                  "key": "name",
+                  "value": "Dolar"
+                },
+                {
+                  "key": "rate",
+                  "value": "1.2"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                },
+                {
+                  "key": "code",
+                  "value": "USD"
+                },
+                {
+                  "key": "symbol",
+                  "value": "$"
+                },
+                {
+                  "key": "symbol_first",
+                  "value": "0"
+                },
+                {
+                  "key": "precision",
+                  "value": "2"
+                },
+                {
+                  "key": "decimal_mark",
+                  "value": "."
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enable currency",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/currency/{{akaunting_currency_id}}/enable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "currency",
+                "{{akaunting_currency_id}}",
+                "enable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Disable currency",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/currency/{{akaunting_currency_id}}/disable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "currency",
+                "{{akaunting_currency_id}}",
+                "disable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete currency",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/currency/{{akaunting_currency_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "currency",
+                "{{akaunting_currency_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Taxes",
+      "item": [
+        {
+          "name": "List taxes",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/taxes?page={{akaunting_page}}&limit={{akaunting_limit}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "taxes"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search taxes",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/taxes?page={{akaunting_page}}&limit={{akaunting_limit}}&search=VAT",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "taxes"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "{{akaunting_page}}"
+                },
+                {
+                  "key": "limit",
+                  "value": "{{akaunting_limit}}"
+                },
+                {
+                  "key": "search",
+                  "value": "VAT"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create tax",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/taxes?type=compound&name=Tax 1&rate=1.2&enabled=1",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "taxes"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "compound"
+                },
+                {
+                  "key": "name",
+                  "value": "Tax 1"
+                },
+                {
+                  "key": "rate",
+                  "value": "1.2"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get tax",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/taxes/{{akaunting_tax_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "taxes",
+                "{{akaunting_tax_id}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update tax",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{akaunting_url}}/taxes/{{akaunting_tax_id}}?company_id={{akaunting_company_id}}&type=compound&name=Tax 1&rate=1.2&enabled=1",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "taxes",
+                "{{akaunting_tax_id}}"
+              ],
+              "query": [
+                {
+                  "key": "company_id",
+                  "value": "{{akaunting_company_id}}"
+                },
+                {
+                  "key": "type",
+                  "value": "compound"
+                },
+                {
+                  "key": "name",
+                  "value": "Tax 1"
+                },
+                {
+                  "key": "rate",
+                  "value": "1.2"
+                },
+                {
+                  "key": "enabled",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enable tax",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/taxes/{{akaunting_tax_id}}/enable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "taxes",
+                "{{akaunting_tax_id}}",
+                "enable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Disable tax",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/taxes/{{akaunting_tax_id}}/disable",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "taxes",
+                "{{akaunting_tax_id}}",
+                "disable"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete tax",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "{{akaunting_password}}",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "{{akaunting_email}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Company",
+                "value": "{{akaunting_company_id}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{akaunting_url}}/taxes/{{akaunting_tax_id}}",
+              "host": [
+                "{{akaunting_url}}"
+              ],
+              "path": [
+                "taxes",
+                "{{akaunting_tax_id}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Ping - is login ok?",
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "{{akaunting_password}}",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "{{akaunting_email}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{akaunting_url}}/ping",
+          "host": [
+            "{{akaunting_url}}"
+          ],
+          "path": [
+            "ping"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "password",
+        "value": "{{akaunting_password}}",
+        "type": "string"
+      },
+      {
+        "key": "username",
+        "value": "{{akaunting_email}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "akaunting_url",
+      "value": "https://your-domain.com/api"
+    },
+    {
+      "key": "akaunting_email",
+      "value": "your-email-address@gmail.com"
+    },
+    {
+      "key": "akaunting_password",
+      "value": "your-strong-password"
+    },
+    {
+      "key": "akaunting_page",
+      "value": "1"
+    },
+    {
+      "key": "akaunting_limit",
+      "value": "25"
+    },
+    {
+      "key": "akaunting_company_id",
+      "value": "akaunting_company_id"
+    },
+    {
+      "key": "akaunting_item_id",
+      "value": "akaunting_item_id"
+    },
+    {
+      "key": "akaunting_user_id",
+      "value": "akaunting_user_id"
+    },
+    {
+      "key": "akaunting_contact_id",
+      "value": "akaunting_contact_id"
+    },
+    {
+      "key": "akaunting_document_id",
+      "value": "akaunting_document_id"
+    },
+    {
+      "key": "akaunting_account_id",
+      "value": "akaunting_account_id"
+    },
+    {
+      "key": "akaunting_transaction_id",
+      "value": "akaunting_transaction_id"
+    },
+    {
+      "key": "akaunting_transfer_id",
+      "value": "akaunting_transfer_id"
+    },
+    {
+      "key": "akaunting_transfer_from_account_id",
+      "value": "akaunting_transfer_from_account_id"
+    },
+    {
+      "key": "akaunting_transfer_to_account_id",
+      "value": "akaunting_transfer_to_account_id"
+    },
+    {
+      "key": "akaunting_category_id",
+      "value": "akaunting_category_id"
+    },
+    {
+      "key": "akaunting_currency_id",
+      "value": "akaunting_currency_id"
+    },
+    {
+      "key": "akaunting_tax_id",
+      "value": "akaunting_tax_id"
+    },
+    {
+      "key": "akaunting_report_id",
+      "value": "akaunting_report_id"
+    }
+  ]
+}
