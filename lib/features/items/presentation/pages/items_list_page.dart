@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../cubit/item_cubit.dart';
 import '../../cubit/item_state.dart';
 import '../../models/item.dart';
+import 'create_item_page.dart';
 
 class ItemsListPage extends StatelessWidget {
   const ItemsListPage({super.key});
@@ -14,8 +15,22 @@ class ItemsListPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Items'),
-          backgroundColor: Colors.indigo,
-          foregroundColor: Colors.white,
+        ),
+        floatingActionButton: Builder(
+          builder: (context) => FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BlocProvider.value(
+                    value: context.read<ItemCubit>(),
+                    child: const CreateItemPage(),
+                  ),
+                ),
+              );
+            },
+            child: const Icon(Icons.add),
+          ),
         ),
         body: BlocBuilder<ItemCubit, ItemState>(
           builder: (context, state) {
@@ -28,7 +43,7 @@ class ItemsListPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(Icons.error_outline, color: Colors.indigo, size: 60),
+                      const Icon(Icons.error_outline, color: Colors.deepPurple, size: 60),
                       const SizedBox(height: 16),
                       Text(
                         state.message,
@@ -64,8 +79,8 @@ class ItemsListPage extends StatelessWidget {
                       margin: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 4.0),
                       child: ListTile(
                         leading: CircleAvatar(
-                          backgroundColor: Colors.indigo.shade100,
-                          child: const Icon(Icons.inventory_2, color: Colors.indigo),
+                          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                          child: Icon(Icons.inventory_2, color: Theme.of(context).colorScheme.primary),
                         ),
                         title: Text(
                           item.name,

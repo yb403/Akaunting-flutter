@@ -110,8 +110,6 @@ class _MoreTab extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('More Options'),
-        backgroundColor: Colors.deepPurple,
-        foregroundColor: Colors.white,
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
@@ -132,7 +130,7 @@ class _MoreTab extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            leading: const Icon(Icons.account_balance, color: Colors.blue),
+            leading: Icon(Icons.account_balance, color: Theme.of(context).colorScheme.primary),
             title: const Text('Accounts'),
             onTap: () {
               Navigator.push(
@@ -142,7 +140,7 @@ class _MoreTab extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.inventory_2),
+            leading: Icon(Icons.inventory_2, color: Theme.of(context).colorScheme.primary),
             title: const Text('Items'),
             onTap: () {
               Navigator.push(
@@ -152,7 +150,7 @@ class _MoreTab extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.pie_chart, color: Colors.indigo),
+            leading: Icon(Icons.pie_chart, color: Theme.of(context).colorScheme.primary),
             title: const Text('Reports'),
             onTap: () {
               Navigator.push(
@@ -162,7 +160,7 @@ class _MoreTab extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.attach_money, color: Colors.green),
+            leading: Icon(Icons.attach_money, color: Theme.of(context).colorScheme.primary),
             title: const Text('Transactions'),
             onTap: () {
               Navigator.push(

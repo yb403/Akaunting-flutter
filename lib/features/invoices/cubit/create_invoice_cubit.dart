@@ -9,8 +9,10 @@ class CreateInvoiceCubit extends Cubit<CreateInvoiceState> {
     required String docNum,
     required String issuedAt,
     required String dueAt,
+    required int contactId,
     required String contactName,
     required String contactEmail,
+    required int itemId,
     required String itemName,
     required double price,
     required double quantity,
@@ -36,11 +38,11 @@ class CreateInvoiceCubit extends Cubit<CreateInvoiceState> {
           '&currency_code=USD'
           '&currency_rate=1'
           '&notes=${Uri.encodeComponent(notes)}'
-          '&contact_id=2'
+          '&contact_id=$contactId'
           '&contact_name=${Uri.encodeComponent(contactName)}'
           '&contact_email=${Uri.encodeComponent(contactEmail)}'
           '&contact_address=${Uri.encodeComponent('Client address')}'
-          '&items[0][item_id]=1'
+          '&items[0][item_id]=$itemId'
           '&items[0][name]=${Uri.encodeComponent(itemName)}'
           '&items[0][quantity]=${quantity.toInt()}'
           '&items[0][price]=${price.toInt()}'

@@ -14,8 +14,6 @@ class BillsListPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Bills'),
-          backgroundColor: Colors.redAccent,
-          foregroundColor: Colors.white,
         ),
         body: BlocBuilder<BillCubit, BillState>(
           builder: (context, state) {
@@ -28,7 +26,7 @@ class BillsListPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(Icons.error_outline, color: Colors.redAccent, size: 60),
+                      const Icon(Icons.error_outline, color: Colors.deepPurple, size: 60),
                       const SizedBox(height: 16),
                       Text(
                         state.message,
@@ -64,8 +62,8 @@ class BillsListPage extends StatelessWidget {
                       margin: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 4.0),
                       child: ListTile(
                         leading: CircleAvatar(
-                          backgroundColor: Colors.redAccent.shade100,
-                          child: const Icon(Icons.receipt, color: Colors.redAccent),
+                          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                          child: Icon(Icons.receipt, color: Theme.of(context).colorScheme.primary),
                         ),
                         title: Text(
                           bill.documentNumber,

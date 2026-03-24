@@ -3,51 +3,72 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../cubit/contact_cubit.dart';
 import '../../cubit/contact_state.dart';
 import '../../models/contact.dart';
+import 'create_contact_page.dart';
 
 class ContactsPage extends StatelessWidget {
   const ContactsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Contacts'),
-          backgroundColor: Colors.teal,
-          foregroundColor: Colors.white,
-          bottom: const TabBar(
-            labelColor: Colors.white,
-            unselectedLabelColor: Colors.white70,
-            indicatorColor: Colors.white,
-            tabs: [
-              Tab(icon: Icon(Icons.person), text: "Customers"),
-              Tab(icon: Icon(Icons.store), text: "Vendors"),
+    return BlocProvider(
+      create: (context) => ContactCubit(),
+      child: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('Contacts'),
+            bottom: const TabBar(
+              indicatorColor: Colors.white,
+              tabs: [
+                Tab(icon: Icon(Icons.person), text: "Customers"),
+                Tab(icon: Icon(Icons.store), text: "Vendors"),
+              ],
+            ),
+          ),
+          floatingActionButton: Builder(
+            builder: (context) => FloatingActionButton(
+              onPressed: () {
+                final int tabIndex = DefaultTabController.of(context).index;
+                final String type = tabIndex == 0 ? 'customer' : 'vendor';
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BlocProvider.value(
+                      value: context.read<ContactCubit>(),
+                      child: CreateContactPage(initialType: type),
+                    ),
+                  ),
+                );
+              },
+              child: const Icon(Icons.add),
+            ),
+          ),
+          body: const TabBarView(
+            children: [
+              _ContactListTab(type: 'customer'),
+              _ContactListTab(type: 'vendor'),
             ],
           ),
-        ),
-        body: TabBarView(
-          children: [
-            // Customers Tab
-            BlocProvider(
-              create: (context) => ContactCubit()..fetchContacts('customer'),
-              child: const _ContactListTab(type: 'customer'),
-            ),
-            // Vendors Tab
-            BlocProvider(
-              create: (context) => ContactCubit()..fetchContacts('vendor'),
-              child: const _ContactListTab(type: 'vendor'),
-            ),
-          ],
         ),
       ),
     );
   }
 }
 
-class _ContactListTab extends StatelessWidget {
+class _ContactListTab extends StatefulWidget {
   final String type;
   const _ContactListTab({required this.type});
+
+  @override
+  State<_ContactListTab> createState() => _ContactListTabState();
+}
+
+class _ContactListTabState extends State<_ContactListTab> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<ContactCubit>().fetchContacts(widget.type);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +81,7 @@ class _ContactListTab extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.error_outline, color: Colors.teal, size: 60),
+                const Icon(Icons.error_outline, color: Colors.deepPurple, size: 60),
                 const SizedBox(height: 16),
                 Text(
                   state.message,
@@ -69,7 +90,7 @@ class _ContactListTab extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 ElevatedButton(
-                  onPressed: () => context.read<ContactCubit>().fetchContacts(type),
+                  onPressed: () => context.read<ContactCubit>().fetchContacts(widget.type),
                   child: const Text('Retry'),
                 )
               ],
@@ -77,11 +98,11 @@ class _ContactListTab extends StatelessWidget {
           );
         } else if (state is ContactLoaded) {
           if (state.contacts.isEmpty) {
-            return Center(child: Text('No $type found.'));
+            return Center(child: Text('No ${widget.type} found.'));
           }
           return RefreshIndicator(
             onRefresh: () async {
-              await context.read<ContactCubit>().fetchContacts(type);
+              await context.read<ContactCubit>().fetchContacts(widget.type);
             },
             child: ListView.builder(
               padding: const EdgeInsets.all(8.0),
@@ -93,10 +114,10 @@ class _ContactListTab extends StatelessWidget {
                   margin: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 4.0),
                   child: ListTile(
                     leading: CircleAvatar(
-                      backgroundColor: Colors.teal.shade100,
+                      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
                       child: Icon(
-                        type == 'customer' ? Icons.person : Icons.store,
-                        color: Colors.teal,
+                        widget.type == 'customer' ? Icons.person : Icons.store,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                     title: Text(contact.name, style: const TextStyle(fontWeight: FontWeight.bold)),

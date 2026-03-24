@@ -21,6 +21,14 @@ class ContactLoaded extends ContactState {
   List<Object?> get props => [contacts];
 }
 
+class ContactCreated extends ContactState {
+  final String message;
+  const ContactCreated(this.message);
+
+  @override
+  List<Object?> get props => [message];
+}
+
 class ContactError extends ContactState {
   final String message;
 

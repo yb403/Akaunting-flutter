@@ -14,8 +14,6 @@ class TransactionsListPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Transactions'),
-          backgroundColor: Colors.purple,
-          foregroundColor: Colors.white,
         ),
         body: BlocBuilder<TransactionCubit, TransactionState>(
           builder: (context, state) {

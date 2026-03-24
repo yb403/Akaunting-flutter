@@ -21,6 +21,14 @@ class ItemLoaded extends ItemState {
   List<Object?> get props => [items];
 }
 
+class ItemCreated extends ItemState {
+  final String message;
+  const ItemCreated(this.message);
+
+  @override
+  List<Object?> get props => [message];
+}
+
 class ItemError extends ItemState {
   final String message;
 

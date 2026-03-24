@@ -15,14 +15,11 @@ class ReportsPage extends StatelessWidget {
         backgroundColor: Colors.grey.shade50,
         appBar: AppBar(
           title: const Text('Financial Reports'),
-          backgroundColor: Colors.indigo,
-          foregroundColor: Colors.white,
-          elevation: 0,
         ),
         body: BlocBuilder<ReportCubit, ReportState>(
           builder: (context, state) {
             if (state is ReportLoading || state is ReportInitial) {
-              return const Center(child: CircularProgressIndicator(color: Colors.indigo));
+              return const Center(child: CircularProgressIndicator());
             } else if (state is ReportError) {
               return Center(
                 child: Padding(
@@ -30,7 +27,7 @@ class ReportsPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Icon(Icons.warning_amber_rounded, color: Colors.indigo, size: 64),
+                      const Icon(Icons.warning_amber_rounded, color: Colors.deepPurple, size: 64),
                       const SizedBox(height: 16),
                       Text(
                         state.message,
@@ -39,10 +36,6 @@ class ReportsPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 24),
                       ElevatedButton.icon(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.indigo,
-                          foregroundColor: Colors.white,
-                        ),
                         onPressed: () {
                           context.read<ReportCubit>().fetchReports();
                         },

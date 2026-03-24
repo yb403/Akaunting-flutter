@@ -91,13 +91,9 @@ class InvoicesListPage extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(
               title: const Text('Invoices'),
-              backgroundColor: Colors.blueAccent,
-              foregroundColor: Colors.white,
             ),
             floatingActionButton: FloatingActionButton.extended(
               onPressed: () => _showCreateOptions(context),
-              backgroundColor: Colors.blueAccent,
-              foregroundColor: Colors.white,
               icon: const Icon(Icons.add),
               label: const Text('New Invoice'),
             ),
@@ -112,7 +108,7 @@ class InvoicesListPage extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(Icons.error_outline, color: Colors.blueAccent, size: 60),
+                          const Icon(Icons.error_outline, color: Colors.deepPurple, size: 60),
                           const SizedBox(height: 16),
                           Text(
                             state.message,
@@ -148,8 +144,8 @@ class InvoicesListPage extends StatelessWidget {
                           margin: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 4.0),
                           child: ListTile(
                             leading: CircleAvatar(
-                              backgroundColor: Colors.blueAccent.shade100,
-                              child: const Icon(Icons.receipt_long, color: Colors.blueAccent),
+                              backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                              child: Icon(Icons.receipt_long, color: Theme.of(context).colorScheme.primary),
                             ),
                             title: Text(
                               invoice.documentNumber,

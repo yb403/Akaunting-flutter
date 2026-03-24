@@ -30,4 +30,32 @@ class ItemCubit extends Cubit<ItemState> {
       emit(ItemError('An error occurred while fetching items: $e'));
     }
   }
+  Future<void> addItem({
+    required String name,
+    required String description,
+    required double salePrice,
+  }) async {
+    emit(ItemLoading());
+
+    try {
+      final body = {
+        'name': name,
+        'description': description,
+        'sale_price': salePrice,
+        'purchase_price': 0, // Default for now
+        'enabled': 1,
+      };
+
+      var response = await ApiClient.postRequest('/items', body);
+
+      if (response.statusCode >= 200 && response.statusCode < 300) {
+        emit(const ItemCreated('Item added successfully!'));
+        fetchItems(); // Refresh the list
+      } else {
+        emit(ItemError('Failed to add item: ${response.statusCode} - ${response.body}'));
+      }
+    } catch (e) {
+      emit(ItemError('An error occurred while adding item: $e'));
+    }
+  }
 }

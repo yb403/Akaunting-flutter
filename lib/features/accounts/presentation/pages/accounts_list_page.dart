@@ -14,8 +14,6 @@ class AccountsListPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Accounts'),
-          backgroundColor: Colors.deepPurple,
-          foregroundColor: Colors.white,
         ),
         body: BlocBuilder<AccountCubit, AccountState>(
           builder: (context, state) {
