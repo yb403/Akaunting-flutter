@@ -8,6 +8,7 @@ import '../../../bills/presentation/pages/bills_list_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../auth/presentation/pages/login_page.dart';
 import '../../../reports/presentation/pages/reports_page.dart';
+import 'dashboard_page.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -25,71 +26,76 @@ class _MainScreenState extends State<MainScreen> {
     Widget _activeContent;
     switch (_currentIndex) {
       case 0:
-        _activeContent = const _DashboardTab();
+        _activeContent = const DashboardPage();
         break;
       case 1:
         _activeContent = const InvoicesListPage();
         break;
       case 2:
-        _activeContent = const ContactsPage();
+        _activeContent = const BillsListPage();
         break;
       case 3:
+        _activeContent = const ContactsPage();
+        break;
+      case 4:
         _activeContent = const _MoreTab();
         break;
       default:
-        _activeContent = const _DashboardTab();
+        _activeContent = const DashboardPage();
     }
 
     return Scaffold(
       body: _activeContent,
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.deepPurple,
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: 'Dashboard',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.receipt_long),
-            label: 'Invoices',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance),
-            label: 'Accounts',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu),
-            label: 'More',
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _DashboardTab extends StatelessWidget {
-  const _DashboardTab();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Dashboard'),
-        backgroundColor: Colors.deepPurple,
-        foregroundColor: Colors.white,
-      ),
-      body: const Center(
-        child: Text(
-          'Welcome to Akaunting Pro',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10,
+              offset: const Offset(0, -2),
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          currentIndex: _currentIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: Colors.deepPurple,
+          unselectedItemColor: Colors.grey,
+          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+          unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 11),
+          elevation: 0,
+          backgroundColor: Colors.white,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.dashboard_outlined),
+              activeIcon: Icon(Icons.dashboard),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.description_outlined),
+              activeIcon: Icon(Icons.description),
+              label: 'Invoices',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.receipt_outlined),
+              activeIcon: Icon(Icons.receipt),
+              label: 'Bills',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.people_outline),
+              activeIcon: Icon(Icons.people),
+              label: 'Customers',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.menu),
+              label: 'More',
+            ),
+          ],
         ),
       ),
     );
@@ -126,14 +132,14 @@ class _MoreTab extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            leading: const Icon(Icons.person),
-            title: const Text('Customers (Coming Soon)'),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.store),
-            title: const Text('Vendors (Coming Soon)'),
-            onTap: () {},
+            leading: const Icon(Icons.account_balance, color: Colors.blue),
+            title: const Text('Accounts'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AccountsListPage()),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.inventory_2),
@@ -156,7 +162,7 @@ class _MoreTab extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.attach_money),
+            leading: const Icon(Icons.attach_money, color: Colors.green),
             title: const Text('Transactions'),
             onTap: () {
               Navigator.push(
@@ -165,16 +171,7 @@ class _MoreTab extends StatelessWidget {
               );
             },
           ),
-          ListTile(
-            leading: const Icon(Icons.receipt),
-            title: const Text('Bills'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const BillsListPage()),
-              );
-            },
-          ),
+          const Divider(),
           ListTile(
             leading: const Icon(Icons.logout, color: Colors.red),
             title: const Text('Logout', style: TextStyle(color: Colors.red)),
@@ -194,3 +191,4 @@ class _MoreTab extends StatelessWidget {
     );
   }
 }
+
