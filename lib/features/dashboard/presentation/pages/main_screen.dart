@@ -7,6 +7,7 @@ import '../../../transactions/presentation/pages/transactions_list_page.dart';
 import '../../../bills/presentation/pages/bills_list_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../auth/presentation/pages/login_page.dart';
+import '../../../reports/presentation/pages/reports_page.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -141,6 +142,16 @@ class _MoreTab extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const ItemsListPage()),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.pie_chart, color: Colors.indigo),
+            title: const Text('Reports'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ReportsPage()),
               );
             },
           ),
