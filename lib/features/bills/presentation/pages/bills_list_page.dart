@@ -4,6 +4,8 @@ import '../../cubit/bill_cubit.dart';
 import '../../cubit/bill_state.dart';
 import '../../models/bill.dart';
 
+import '../../../../core/widgets/common_app_bar.dart';
+
 class BillsListPage extends StatelessWidget {
   const BillsListPage({super.key});
 
@@ -12,9 +14,7 @@ class BillsListPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => BillCubit()..fetchBills(),
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Bills'),
-        ),
+        appBar: const CommonAppBar(title: 'Bills'),
         body: BlocBuilder<BillCubit, BillState>(
           builder: (context, state) {
             if (state is BillLoading || state is BillInitial) {

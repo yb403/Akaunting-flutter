@@ -5,6 +5,8 @@ import '../../cubit/item_state.dart';
 import '../../models/item.dart';
 import 'create_item_page.dart';
 
+import '../../../../core/widgets/common_app_bar.dart';
+
 class ItemsListPage extends StatelessWidget {
   const ItemsListPage({super.key});
 
@@ -13,9 +15,7 @@ class ItemsListPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => ItemCubit()..fetchItems(),
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Items'),
-        ),
+        appBar: const CommonAppBar(title: 'Items'),
         floatingActionButton: Builder(
           builder: (context) => FloatingActionButton(
             onPressed: () {

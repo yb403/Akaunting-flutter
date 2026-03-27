@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../cubit/item_cubit.dart';
 import '../../cubit/item_state.dart';
+import '../../../../core/widgets/common_app_bar.dart';
 
 class CreateItemPage extends StatefulWidget {
   const CreateItemPage({super.key});
@@ -37,9 +38,7 @@ class _CreateItemPageState extends State<CreateItemPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Create New Item'),
-      ),
+      appBar: const CommonAppBar(title: 'Create New Item'),
       body: BlocListener<ItemCubit, ItemState>(
         listener: (context, state) {
           if (state is ItemCreated) {

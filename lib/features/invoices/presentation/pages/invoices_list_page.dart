@@ -7,6 +7,8 @@ import 'create_invoice_page.dart';
 import 'extract_and_create_invoice_page.dart';
 import 'extract_image_invoice_page.dart';
 
+import '../../../../core/widgets/common_app_bar.dart';
+
 class InvoicesListPage extends StatelessWidget {
   const InvoicesListPage({super.key});
 
@@ -89,9 +91,7 @@ class InvoicesListPage extends StatelessWidget {
       child: Builder(
         builder: (context) {
           return Scaffold(
-            appBar: AppBar(
-              title: const Text('Invoices'),
-            ),
+            appBar: const CommonAppBar(title: 'Invoices'),
             floatingActionButton: FloatingActionButton.extended(
               onPressed: () => _showCreateOptions(context),
               icon: const Icon(Icons.add),

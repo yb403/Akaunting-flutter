@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../cubit/contact_cubit.dart';
 import '../../cubit/contact_state.dart';
+import '../../../../core/widgets/common_app_bar.dart';
 
 class CreateContactPage extends StatefulWidget {
   final String initialType;
@@ -43,8 +44,8 @@ class _CreateContactPageState extends State<CreateContactPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Create New ${_type[0].toUpperCase()}${_type.substring(1)}'),
+      appBar: CommonAppBar(
+        title: 'Create New ${_type[0].toUpperCase()}${_type.substring(1)}',
       ),
       body: BlocListener<ContactCubit, ContactState>(
         listener: (context, state) {

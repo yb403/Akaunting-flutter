@@ -4,6 +4,8 @@ import '../../cubit/report_cubit.dart';
 import '../../cubit/report_state.dart';
 import '../../models/report_summary.dart';
 
+import '../../../../core/widgets/common_app_bar.dart';
+
 class ReportsPage extends StatelessWidget {
   const ReportsPage({super.key});
 
@@ -12,10 +14,7 @@ class ReportsPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => ReportCubit()..fetchReports(),
       child: Scaffold(
-        backgroundColor: Colors.grey.shade50,
-        appBar: AppBar(
-          title: const Text('Financial Reports'),
-        ),
+        appBar: const CommonAppBar(title: 'Financial Reports'),
         body: BlocBuilder<ReportCubit, ReportState>(
           builder: (context, state) {
             if (state is ReportLoading || state is ReportInitial) {

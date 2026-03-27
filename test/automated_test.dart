@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 void main() {
   test('Verify Refactored Extraction Logic', () async {
-    final String filePath = 'lib/invoice.pdf';
+    final String filePath = 'assets/demo_invoice.pdf';
     final data = await extractInvoiceData(filePath);
     
     print('Extracted Invoice #: ${data.invoiceNumber}');

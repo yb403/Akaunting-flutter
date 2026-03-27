@@ -9,6 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../auth/presentation/pages/login_page.dart';
 import '../../../reports/presentation/pages/reports_page.dart';
 import 'dashboard_page.dart';
+import '../../../../core/widgets/common_app_bar.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -108,8 +109,8 @@ class _MoreTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('More Options'),
+      appBar: CommonAppBar(
+        title: 'More Options',
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
@@ -189,4 +190,3 @@ class _MoreTab extends StatelessWidget {
     );
   }
 }
-

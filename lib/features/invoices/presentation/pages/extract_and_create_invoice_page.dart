@@ -8,6 +8,7 @@ import '../../../../script.dart';
 import 'package:intl/intl.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../../../core/widgets/common_app_bar.dart';
 
 class ExtractAndCreateInvoicePage extends StatefulWidget {
   const ExtractAndCreateInvoicePage({super.key});
@@ -81,7 +82,7 @@ class _ExtractAndCreateInvoicePageState extends State<ExtractAndCreateInvoicePag
     });
 
     try {
-      final ByteData assetData = await rootBundle.load('lib/invoice.pdf');
+      final ByteData assetData = await rootBundle.load('assets/demo_invoice.pdf');
       final Uint8List bytes = assetData.buffer.asUint8List();
       await _processInvoiceData(bytes);
     } catch (e) {
@@ -180,10 +181,9 @@ class _ExtractAndCreateInvoicePageState extends State<ExtractAndCreateInvoicePag
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Extract & Create Invoice'),
-        backgroundColor: Colors.blueAccent,
-      ),
+      appBar: CommonAppBar(
+     title: 'Extract & Create Invoice'),
+      
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -233,7 +233,7 @@ class _ExtractAndCreateInvoicePageState extends State<ExtractAndCreateInvoicePag
               'Status: $_statusMessage',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: _statusMessage.contains('Error') ? Colors.red : Colors.green[800],
+                color: _statusMessage.contains('Error') ? Colors.red : Colors.deepPurple[800],
               ),
             ),
             if (_extractedData != null) ...[

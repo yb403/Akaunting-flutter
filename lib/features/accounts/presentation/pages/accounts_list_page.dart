@@ -4,6 +4,8 @@ import '../../cubit/account_cubit.dart';
 import '../../cubit/account_state.dart';
 import '../../models/account.dart';
 
+import '../../../../core/widgets/common_app_bar.dart';
+
 class AccountsListPage extends StatelessWidget {
   const AccountsListPage({super.key});
 
@@ -12,9 +14,7 @@ class AccountsListPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => AccountCubit()..fetchAccounts(),
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Accounts'),
-        ),
+        appBar: const CommonAppBar(title: 'Accounts'),
         body: BlocBuilder<AccountCubit, AccountState>(
           builder: (context, state) {
             if (state is AccountLoading || state is AccountInitial) {

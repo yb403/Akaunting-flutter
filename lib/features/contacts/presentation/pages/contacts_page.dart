@@ -5,6 +5,8 @@ import '../../cubit/contact_state.dart';
 import '../../models/contact.dart';
 import 'create_contact_page.dart';
 
+import '../../../../core/widgets/common_app_bar.dart';
+
 class ContactsPage extends StatelessWidget {
   const ContactsPage({super.key});
 
@@ -15,10 +17,12 @@ class ContactsPage extends StatelessWidget {
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
-          appBar: AppBar(
-            title: const Text('Contacts'),
-            bottom: const TabBar(
+          appBar: const CommonAppBar(
+            title: 'Contacts',
+            bottom: TabBar(
               indicatorColor: Colors.white,
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.white70,
               tabs: [
                 Tab(icon: Icon(Icons.person), text: "Customers"),
                 Tab(icon: Icon(Icons.store), text: "Vendors"),

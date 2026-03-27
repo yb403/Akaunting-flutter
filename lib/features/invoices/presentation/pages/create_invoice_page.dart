@@ -8,6 +8,7 @@ import '../../../items/cubit/item_cubit.dart';
 import '../../../items/cubit/item_state.dart';
 import '../../../contacts/models/contact.dart';
 import '../../../items/models/item.dart';
+import '../../../../core/widgets/common_app_bar.dart';
 
 class CreateInvoicePage extends StatelessWidget {
   const CreateInvoicePage({super.key});
@@ -81,9 +82,7 @@ class _CreateInvoiceFormState extends State<_CreateInvoiceForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Create Invoice'),
-      ),
+      appBar: const CommonAppBar(title: 'Create Invoice'),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(

@@ -4,6 +4,8 @@ import '../../cubit/transaction_cubit.dart';
 import '../../cubit/transaction_state.dart';
 import '../../models/transaction.dart';
 
+import '../../../../core/widgets/common_app_bar.dart';
+
 class TransactionsListPage extends StatelessWidget {
   const TransactionsListPage({super.key});
 
@@ -12,9 +14,7 @@ class TransactionsListPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => TransactionCubit()..fetchTransactions(),
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Transactions'),
-        ),
+        appBar: const CommonAppBar(title: 'Transactions'),
         body: BlocBuilder<TransactionCubit, TransactionState>(
           builder: (context, state) {
             if (state is TransactionLoading || state is TransactionInitial) {

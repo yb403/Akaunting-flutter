@@ -9,6 +9,7 @@ import 'package:intl/intl.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../../../core/widgets/common_app_bar.dart';
 
 class ExtractImageInvoicePage extends StatefulWidget {
   const ExtractImageInvoicePage({super.key});
@@ -86,7 +87,7 @@ class _ExtractImageInvoicePageState extends State<ExtractImageInvoicePage> {
 
     try {
       // For assets, we might need to write to a temp file because ML Kit needs a path or bytes
-      final ByteData data = await rootBundle.load('lib/invoice.png');
+      final ByteData data = await rootBundle.load('assets/demo_invoice.png');
       final bytes = data.buffer.asUint8List();
       final tempDir = Directory.systemTemp;
       final tempFile = File('${tempDir.path}/temp_invoice.png');
@@ -198,10 +199,7 @@ class _ExtractImageInvoicePageState extends State<ExtractImageInvoicePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Extract from Image (OCR)'),
-        backgroundColor: Colors.orangeAccent,
-      ),
+      appBar: const CommonAppBar(title: 'Extract from Image (OCR)'),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -213,7 +211,7 @@ class _ExtractImageInvoicePageState extends State<ExtractImageInvoicePage> {
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
-                    const Icon(Icons.image, size: 64, color: Colors.orange),
+                    const Icon(Icons.image, size: 64, color: Colors.deepPurple),
                     const SizedBox(height: 8),
                     Text(
                       _selectedFileName != null 
@@ -230,7 +228,7 @@ class _ExtractImageInvoicePageState extends State<ExtractImageInvoicePage> {
                           icon: const Icon(Icons.photo_library),
                           label: const Text('Pick Image & Create Invoice'),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange,
+                            backgroundColor: Colors.deepPurple,
                             foregroundColor: Colors.white,
                             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
                             minimumSize: const Size(double.infinity, 48),
@@ -253,7 +251,7 @@ class _ExtractImageInvoicePageState extends State<ExtractImageInvoicePage> {
               'Status: $_statusMessage',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: _statusMessage.contains('Error') ? Colors.red : Colors.orange[800],
+                color: _statusMessage.contains('Error') ? Colors.red : Colors.deepPurple[800],
               ),
             ),
             if (_extractedData != null) ...[
